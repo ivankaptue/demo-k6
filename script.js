@@ -16,7 +16,7 @@ export const options = {
 export default function () {
     const response = http.get('https://test-api.k6.io/');
     check(response, {
-        "http response status code is 200": (res) => response.status === 200
+        "http response status code is 200": res => res.status === 200
     })
     failures.add(response.status !== 200)
 }
